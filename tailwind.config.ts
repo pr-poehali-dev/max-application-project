@@ -64,9 +64,20 @@ export default {
 				},
 				telegram: {
 					blue: '#0088CC',
-					dark: '#2C2C2E',
-					light: '#F7F7F7',
-					white: '#FFFFFF'
+					dark: '#1a1a1a',
+					darker: '#0f0f0f',
+					light: '#2a2a2a',
+					white: '#000000',
+					text: '#ffffff',
+					gray: '#666666'
+				},
+				gradient: {
+					purple: '#8B5CF6',
+					pink: '#EC4899',
+					blue: '#3B82F6',
+					green: '#10B981',
+					orange: '#F59E0B',
+					red: '#EF4444'
 				}
 			},
 			borderRadius: {
@@ -94,7 +105,54 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out',
+				'bounce-in': 'bounce-in 0.6s ease-out',
+				'pulse-color': 'pulse-color 2s ease-in-out infinite',
+				'glow': 'glow 1.5s ease-in-out infinite alternate'
+			},
+			keyframes: {
+				'accordion-down': {
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
+				},
+				'accordion-up': {
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in': {
+					'0%': { opacity: '0', transform: 'translateX(-20px)' },
+					'100%': { opacity: '1', transform: 'translateX(0)' }
+				},
+				'bounce-in': {
+					'0%': { transform: 'scale(0.3)', opacity: '0' },
+					'50%': { transform: 'scale(1.05)' },
+					'70%': { transform: 'scale(0.9)' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'pulse-color': {
+					'0%, 100%': { background: 'linear-gradient(45deg, #8B5CF6, #EC4899)' },
+					'25%': { background: 'linear-gradient(45deg, #3B82F6, #10B981)' },
+					'50%': { background: 'linear-gradient(45deg, #F59E0B, #EF4444)' },
+					'75%': { background: 'linear-gradient(45deg, #10B981, #8B5CF6)' }
+				},
+				'glow': {
+					'0%': { boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' },
+					'100%': { boxShadow: '0 0 30px rgba(139, 92, 246, 0.8), 0 0 40px rgba(236, 72, 153, 0.3)' }
+				}
 			}
 		}
 	},
